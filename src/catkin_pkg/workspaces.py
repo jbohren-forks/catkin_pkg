@@ -37,6 +37,9 @@ Library to provided logic for chained workspaces
 from __future__ import print_function
 
 import os
+import re
+
+from .common import run_command
 
 CATKIN_WORKSPACE_MARKER_FILE = '.catkin_workspace'
 
@@ -99,3 +102,7 @@ def ensure_workspace_marker(base_path):
     if not os.path.exists(os.path.join(base_path, CATKIN_WORKSPACE_MARKER_FILE)):
         with open(os.path.join(base_path, CATKIN_WORKSPACE_MARKER_FILE), 'a') as fhand:
             fhand.write('# This file currently only serves to mark the location of a catkin workspace for tool integration\n')
+
+
+
+
